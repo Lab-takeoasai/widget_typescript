@@ -4,6 +4,8 @@ var typescript = require('gulp-typescript');
 var notify = require("gulp-notify");
 var plumber = require('gulp-plumber');
 var webpack = require('gulp-webpack');
+var webpackConfig = require('./webpack.config.js');
+
 
 var typescriptProject = typescript.createProject({
   target: "ES5", 
@@ -12,16 +14,14 @@ var typescriptProject = typescript.createProject({
 });
 
 var paths = {
-    ts: ['src/**/*.js']
+    ts: ['src/**/*.ts']
 };
 
 gulp.task('build', function(done) {
     gulp.src(paths.ts)
-    .pipe(plumber({errorHandler: notify.onError('Error: typescript build')}))
-    .pipe(typescript(typescriptProject))
-    .pipe(webpack({output: {
-        filename: 'main.js',
-      }}))
+    .pipe(plumber({errorHandler: notify.onError('Error: build')}))
+//    .pipe(typescript(typescriptProject))
+    .pipe(webpack(webpackConfig))
     .pipe(gulp.dest('./build'))
     .on('end', done);
 });

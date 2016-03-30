@@ -2,7 +2,7 @@
   "name": "widget_typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/takeo-asai/widget_typescript#readme",
   "devDependencies": {
+    "electron-prebuilt": "^0.37.3",
     "gulp": "^3.9.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-typescript": "^2.12.1",
-    "gulp-webpack": "^1.5.0"
+    "gulp-webpack": "^1.5.0",
+    "ts-loader": "^0.8.1"
   }
 }
