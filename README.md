@@ -1,0 +1,2 @@
+refが先
+strictはあと

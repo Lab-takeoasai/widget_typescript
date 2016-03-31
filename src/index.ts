@@ -1,6 +1,5 @@
-"use strict";
 /// <reference path="../typings/main.d.ts" />
-
+"use strict";
 
 import * as Electron from "electron";
 const app = Electron.app;
